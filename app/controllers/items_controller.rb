@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
    def create                                                                # создание одного объекта в базу
       item = Item.create(items_params)
       if item.persisted?
-      render json: item.name, status: :created
+      redirect_to items_path
      else
       render json: item.errors, status: :unprocessable_entity  
      end
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
    def update                                               # обновляет объект
       item = Item.where(id: params[:id]).first
       if item.update(items_params)
-      redirect_to item_path
+      redirect_to items_path
       else
          render json: item.errors, status: :unprocessable_entity
       end
@@ -45,8 +45,10 @@ class ItemsController < ApplicationController
    def destroy                                                             # уничтожает объект
       item = Item.where(id: params[:id]).first.destroy
       if item.destroyed?
-         redirect_to items_path
-      else
+         # redirect_to items_path
+         redirect_to '/items'
+         # render 'items/index'                                       при рендере (в отличие от редиректа)не происходит 
+      else                                                            #перезагрузки страницы и мы теряем доступ к переменной @items
          render json: item.errors, status: :unprocessable_entity   
       end   
    end                            
