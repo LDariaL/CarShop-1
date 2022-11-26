@@ -1,7 +1,6 @@
 
 <h2 style="color: #B00100; margin: 0 auto">create new item</h2> <br/>
 
-
 <!--
 <form action="/items/new" method="post">
     <label>
@@ -10,12 +9,14 @@
       <input type="submit" />  
 </form>
 -->
+<!-- post in database. using Gem Simple Form -->
 
+<%= simple_form_for @item do |f| %>               
+ <%= f.input :name %>                                
+ <%= f.input :price %> 
+ <%= f.input :description, label: t("item.description") %>   <!-- Transleted into RU by /config/locales/ru.yml -->
 
-<%= form_tag items_path, method: :post do %>                      <!-- post in database -->
- <%= label_tag :name %>                                
- <%= text_field_tag :name %>                                      <!-- name input -->
- <%= label_tag :price %>
- <%= text_field_tag :price %>                                     <!-- price input -->
- <%= submit_tag "Save", class: "btn btn-large btn-primary" %>     <!-- Save button  -->
+ <%= f.button :submit, class: "btn-primary" %>     <!-- Save button  -->
 <%end%>
+
+<%= render partial: 'shared/email' %>

@@ -13,6 +13,13 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
+gem "haml-rails"
+gem "webpacker"
+gem "jsbundling-rails"
+gem "cssbundling-rails"
+gem "sassc-rails"
+gem "simple_form"
+gem 'bootstrap', '~> 5.2.2'
 
 group :development, :test do
   gem 'rspec-rails'

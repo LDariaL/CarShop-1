@@ -7,4 +7,9 @@
  <%= label_tag :price %>
  <%= text_field_tag :price, @item.price %>             <!-- price edited input -->
  <%= submit_tag "Update", class: "btn btn-large btn-primary" %>  <!-- Update button  -->
+ <%= label_tag :description %>                                
+ <%= text_field_tag :description, @item.description %> 
 <% end %>
+
+<%= render partial: 'shared/email' %>    <!-- render method; partials file name starts _ to distinguish them from
+                                              regular views, but referred to without the underscore           -->
