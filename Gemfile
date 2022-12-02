@@ -20,22 +20,22 @@ gem "cssbundling-rails"
 gem "sassc-rails"
 gem "simple_form"
 gem 'bootstrap', '~> 5.2.2'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 group :development, :test do
   gem 'rspec-rails'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
- 
   gem "web-console"
-
-
 end
 
 group :test do
- 
+  gem "shoulda-matchers"
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"

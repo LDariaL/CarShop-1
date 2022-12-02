@@ -6,12 +6,12 @@ class ItemsController < ApplicationController
    # действием самого контроллера (например, найти предмет, юзера или запись: find_item) 
    # или проверить админство (только админ может делать что-то) 
    before_action :find_item, only: %i[show edit update destroy upvote]   
-   before_action :admin?,    only: %i[edit]            
+   #before_action :admin?,    only: %i[edit]            
    after_action :show_info,  only: %i[index]
    
    def index                                  # показывает все что есть в базе данных   
-      @items = Item.all.order(:id) 
-      @items = @items.includes(:image)        # пример жадной загрузки (eager loading)
+      @items = Item.all.order(:id).includes :image 
+      # @items = @items.includes(:image)        # пример жадной загрузки (eager loading)
 
       # примеры поиска по объектам через get (параметры передаются в адресной строке):
       # @items = @items.where('price >= ?', params[:price_from]) if params[:price_from]
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
       redirect_to items_path
       else
          flash.now[:error] = 'Please fill all fields correctly'
-         render json: item.errors, status: :unprocessable_entity
+         render json: @item.errors, status: :unprocessable_entity
       end
    end                                                           
 

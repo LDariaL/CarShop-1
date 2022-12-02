@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 738935a01c2cdc7d5c141f80e8257bb562335ab1
+  branch: main
+  specs:
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -99,6 +107,11 @@ GEM
     diff-lcs (1.5.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -174,6 +187,10 @@ GEM
       activesupport (= 7.0.4)
       bundler (>= 1.15.0)
       railties (= 7.0.4)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -223,6 +240,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    shoulda-matchers (5.2.0)
+      activesupport (>= 5.2.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -276,6 +295,8 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  factory_bot_rails
+  faker!
   haml-rails
   importmap-rails
   jbuilder
@@ -284,9 +305,11 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rails-controller-testing
   rspec-rails
   sassc-rails
   selenium-webdriver
+  shoulda-matchers
   simple_form
   sprockets-rails
   stimulus-rails
