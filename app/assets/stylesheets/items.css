@@ -2,3 +2,12 @@
  display: ruby-base-container;
  align-items: center;
 }
+.deleteAction {
+   color: slategray;
+   cursor: pointer;
+   ;
+}
+
+.deleteAction:hover {
+    color:firebrick;
+}

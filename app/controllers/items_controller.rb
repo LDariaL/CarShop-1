@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
    before_action :find_item, only: %i[show edit update destroy upvote]   
    #before_action :admin?,    only: %i[edit]            
    after_action :show_info,  only: %i[index]
+
    
    def index                                  # показывает все что есть в базе данных   
       @items = Item.all.order(:id).includes :image 
@@ -58,8 +59,9 @@ class ItemsController < ApplicationController
    def destroy                        # уничтожает объект
       if @item.destroy.destroyed?
          flash[:success] = 'Item has been deleted'
+         render json: { success: true }
          # redirect_to items_path
-         redirect_to '/items'
+         #redirect_to '/items'
          # render 'items/index'     при рендере (в отличие от редиректа)не происходит 
       else                          #перезагрузки страницы и мы теряем доступ к переменной @items
          flash[:error] = "Item wasn't deleted"

@@ -1,9 +1,8 @@
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-
 Rails.application.routes.draw do 
  
- # root to: 'items#index'  
+ root to: 'home#homepage'  
  get '/admin/users_count', to: 'admin#users_count'    
  resources :items do                # scaffolding RESTful actions
     get :upvote, on: :member        # new action; get - method,  

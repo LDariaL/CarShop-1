@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<%= stylesheet_link_tag "items", media: "all" %>
 <h2 style="color: #B00100; margin: 0 auto">All items</h2> <br/>
 <% if @items.empty? %>
 <h3 style="color: #B00100; margin: 0 auto">NO ITEMS!</h3> <br/>
@@ -17,14 +20,14 @@
  </thead> 
 <% @items.each do |item| %>                           
       <tbody> 
-      <tr>
+      <tr data-item_id="<%= item.id %>">
    <th scope="col"><%= item.id %></th>
    <th scope="col"><%= link_to item.name, item_path(item) %></th>    <!-- переход по ссылке на страницу item -->
    <th scope="col"><%= item.price %></th> 
    <th scope="col"><%= item.description %></th> 
    <th scope="col"><%= item.votes_count %> &nbsp; <%= link_to '+', upvote_item_path(item), class: "text-info" %></th> 
    <th scope="col"><%= !item.image.nil? ? image_tag(item.image.file, width: '30px', height: '30px') : 'no img' %></th>
-   <th scope="col"><%= button_to 'delete', item_path(item), method: :delete %></th>
+   <th scope="col" class="deleteAction">delete</th>
       </tr>
       </tbody>  
 <% end %> 
@@ -45,3 +48,4 @@
 <% end %>
 
 <%= render partial: 'shared/email' %>
+</html>
