@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
-<%= stylesheet_link_tag "home", media: "all" %>
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
- </head>
- <body>
- <div class="container">
-  <%= button_to 'into shop', items_path, method: :get, class: "animated-word" %>
-</div>
- </body>
+  <%= stylesheet_link_tag "home", media: "all" %>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+      <%= button_to 'into shop', items_path, method: :get, class: "animated-word" %>
+    </div>
+    <div class="container">
+      <% if user_signed_in? %>                                               <!-- devise -->
+        <a href="#" class="btn btn-light">
+          Добро пожаловать,
+          <%= current_user.email %>
+        </a>
+        <%= link_to 'Выход', destroy_user_session_path,
+                    method: :delete,
+                    class: "btn btn-light" %>
+        <%= link_to 'Редактирование', edit_user_registration_path,
+                    class: "btn btn-light" %>
+      <% else %>
+        <%= link_to 'Вход', new_user_session_path,
+                    class: "btn btn-light" %>
+        <%= link_to 'Регистрация', new_user_registration_path,
+                    class: "btn btn-light" %>
+      <% end %>
+    </div>
+  </body>
 </html>

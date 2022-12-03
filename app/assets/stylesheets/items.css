@@ -1,13 +1,15 @@
 .vertical-center {
- display: ruby-base-container;
- align-items: center;
+    display: ruby-base-container;
+    align-items: center;
+    min-height: 100vh;
 }
+
 .deleteAction {
-   color: slategray;
-   cursor: pointer;
-   ;
+    color: slategray;
+    cursor: pointer;
+    ;
 }
 
 .deleteAction:hover {
-    color:firebrick;
+    color: firebrick;
 }
