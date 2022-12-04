@@ -16,7 +16,7 @@
           <%= current_user.email %>
         </a>
         <%= link_to 'Выход', destroy_user_session_path,
-                    method: :delete,
+                    method: :get,
                     class: "btn btn-light" %>
         <%= link_to 'Редактирование', edit_user_registration_path,
                     class: "btn btn-light" %>

@@ -59,11 +59,11 @@ class ItemsController < ApplicationController
    def destroy                        # уничтожает объект
       if @item.destroy.destroyed?
          flash[:success] = 'Item has been deleted'
-         render json: { success: true }
-         # redirect_to items_path
-         #redirect_to '/items'
-         # render 'items/index'     при рендере (в отличие от редиректа)не происходит 
-      else                          #перезагрузки страницы и мы теряем доступ к переменной @items
+         # render json: { success: true }
+         redirect_to items_path
+         # redirect_to '/items'
+         # redirect_to 'items/index'   # при рендере (в отличие от редиректа)не происходит 
+      else                             # перезагрузки страницы и мы теряем доступ к переменной @items
          flash[:error] = "Item wasn't deleted"
          render json: item.errors, status: :unprocessable_entity   
       end   
