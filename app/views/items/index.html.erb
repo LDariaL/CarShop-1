@@ -27,7 +27,7 @@
    <th scope="col"><%= item.description %></th> 
    <th scope="col"><%= item.votes_count %> &nbsp; <%= link_to '+', upvote_item_path(item), class: "text-info" %></th> 
    <th scope="col"><%= !item.image.nil? ? image_tag(item.image.file, width: '30px', height: '30px') : 'no img' %></th>
-   <th scope="col" class="deleteAction">delete</th>
+   <th scope="col"><%= button_to 'delete', item_path(item), method: :delete, class: "deleteAction" %></th>
       </tr>
       </tbody>  
 <% end %> 
