@@ -1,4 +1,4 @@
-There is a simple stand with items (cars) for an online shop, with ratings, prices and images, with registration, without cart (but with this option in the back-end potentially). You can choose, delete and modified any of items.
+There is a simple stand with items (cars) for an online catalog or a shop, with ratings, prices and images, with registration, without cart (but with this option in the back-end potentially). You can choose, delete and modified any of items.
 
 Ruby 3.1.2
 
