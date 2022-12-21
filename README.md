@@ -14,11 +14,11 @@ There is a simple stand with items (cars) for an online-catalog or a shop, with 
 To get started with the app, clone the repo and then install the needed gems:
 ```
 $ bundle install 
-```
+
 Initialize the database
 ```
 rails db:create db:migrate db:seed
-```
+
 Run the app in a local server:
 ```
 $ rails server
