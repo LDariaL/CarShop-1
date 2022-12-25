@@ -33,4 +33,4 @@ Opening the application:
 
 > open http://localhost:3000/
 
-If you want to see it "in action", you also need PostgeSQL in your machine, and add your own credentials (user&pass) in the database.yml or edit rails credentials. 
+If you want to see it "in action", you also need PostgreSQL in your machine, and add your own credentials (user&pass) in the database.yml or edit rails credentials. 
