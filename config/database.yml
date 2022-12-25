@@ -1,0 +1,17 @@
+
+default: &default
+adapter: postgresql
+encoding: unicode
+username: <%= Rails.application.credentials.database[:username] %>
+password: <%= Rails.application.credentials.database[:password] %>
+host: localhost
+port: 5432
+pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+<<: *default
+database: cars_display_development
+
+test:
+<<: *default
+database: cars_display_test
