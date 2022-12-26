@@ -21,7 +21,7 @@ $ bundle install
 
 Initialize the database
 ```
-rails db:create db:migrate db:seed
+rails db:create && db:migrate && db:seed
 ```
 
 Run the app in a local server:
